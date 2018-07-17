@@ -1,3 +1,14 @@
-* {
+/* * {
     border: 1px solid #000;
+} */
+
+.key {
+    display: inline-block;
+    height: 40px;
+    width: 50px;
+}
+
+.logo {
+    height: 15px;
+    width: 15px;
 }
