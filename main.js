@@ -47,13 +47,7 @@ for (index1 = 0; index1 < allKeys.length; index1++) {
     }
 }
 
-// var editButton = document.getElementsByClassName('edit')
-
-// editButton.addEventListener('click', function (e) {
-//     var input = "输入"
-//     var userInput = prompt(input, 'google.com')
-//     inputImg = document.getElementById(keyText)
-//     inputImg.src = 'http://' + userInput + '/favicon.ico'
-//     console.log('edit');
-//     console.log(userInput);
-// })
+document.addEventListener('keypress', function (e) {
+    var url = 'http://' + keysToUrls[e.key]
+    open(url)
+})
