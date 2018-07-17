@@ -7,9 +7,16 @@
     height: 40px;
     width: 50px;
     border: 1px solid #000;
+    background-color: black;
+    color: white;
 }
 
 .logo {
     height: 15px;
     width: 15px;
+}
+
+button {
+    color: white;
+    background-color: black;
 }

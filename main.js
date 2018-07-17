@@ -27,6 +27,9 @@ function ClickEditButton(button) {
         var userInput = prompt(input, 'google.com')
         inputImg = document.getElementById(e.target.id)
         inputImg.src = 'http://' + userInput + '/favicon.ico'
+        inputImg.onerror = function (e) {
+            inputImg.src = 'https://i.imgur.com/tDXa3EN.png'
+        }
         keysToUrlsFromLocal[e.target.id] = userInput
         setLocalStorage(keysToUrlsFromLocal)
     })
@@ -73,6 +76,14 @@ for (index1 = 0; index1 < allKeys.length; index1++) {
             'id': keyText,
             'src': 'http://' + url + '/favicon.ico'
         })
+
+
+        if (img.src == 'http://undefined/favicon.ico') {
+            img.src = 'https://i.imgur.com/tDXa3EN.png'
+        }
+
+
+
         var editButton = CreateHtmlTag('button', {
             'clasName': 'edit',
             'textContent': 'edit',
