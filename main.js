@@ -21,14 +21,39 @@ for (index1 = 0; index1 < allKeys.length; index1++) {
     var table = document.getElementById('table')
     table.appendChild(keyRow)
     for (index2 = 0; index2 < allKeys[index1].length; index2++) {
+        var keyText = allKeys[index1][index2]
         var key = document.createElement('kbd')
         var img = document.createElement('img')
+        var editButton = document.createElement('button')
+        editButton.className = 'edit'
+        editButton.textContent = 'e'
+        editButton.id = keyText
         key.className = 'key'
         img.className = 'logo'
-        img.src = 'http://' + keysToUrls[allKeys[index1][index2]] + '/favicon.ico'
+        var url = keysToUrls[keyText]
+        img.src = 'http://' + url + '/favicon.ico'
+        img.id = keyText
         keyRow.appendChild(key)
-        key.textContent = allKeys[index1][index2]
+        key.textContent = keyText
         key.appendChild(img)
-
+        key.appendChild(editButton)
+        editButton.addEventListener('click', function (e) {
+            console.log(e.target.id)
+            var input = "输入"
+            var userInput = prompt(input, 'google.com')
+            inputImg = document.getElementById(e.target.id)
+            inputImg.src = 'http://' + userInput + '/favicon.ico'
+        })
     }
 }
+
+// var editButton = document.getElementsByClassName('edit')
+
+// editButton.addEventListener('click', function (e) {
+//     var input = "输入"
+//     var userInput = prompt(input, 'google.com')
+//     inputImg = document.getElementById(keyText)
+//     inputImg.src = 'http://' + userInput + '/favicon.ico'
+//     console.log('edit');
+//     console.log(userInput);
+// })
