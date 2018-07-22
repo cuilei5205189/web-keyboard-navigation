@@ -27,8 +27,12 @@ function ClickEditButton(button) {
         var userInput = prompt(input, 'google.com')
         inputImg = document.getElementById(e.target.id)
         inputImg.src = 'http://' + userInput + '/favicon.ico'
+        if (inputImg.src == 'http://undefined/favicon.ico' || inputImg.src == 'http://null/favicon.ico') {
+            inputImg.src = 'https://i.imgur.com/tDXa3EN.png'
+        }
         inputImg.onerror = function (e) {
             inputImg.src = 'https://i.imgur.com/tDXa3EN.png'
+            console.log('wrong');
         }
         keysToUrlsFromLocal[e.target.id] = userInput
         setLocalStorage(keysToUrlsFromLocal)
@@ -78,10 +82,12 @@ for (index1 = 0; index1 < allKeys.length; index1++) {
         })
 
 
-        if (img.src == 'http://undefined/favicon.ico') {
+        if (img.src == 'http://undefined/favicon.ico' || img.src == 'http://null/favicon.ico') {
             img.src = 'https://i.imgur.com/tDXa3EN.png'
         }
-
+        img.onerror = function (e) {
+            img.src = 'https://i.imgur.com/tDXa3EN.png'
+        }
 
 
         var editButton = CreateHtmlTag('button', {
