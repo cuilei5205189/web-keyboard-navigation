@@ -23,3 +23,4 @@
 
 第一次访问时，localstorge还没有数据，会有问题。
 
+- [ ] https://www.google.com/s2/favicons?domain=baidu.com
